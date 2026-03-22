@@ -1,0 +1,38 @@
+<section class="hero">
+  <div class="hero__orb hero__orb--pink"></div>
+  <div class="hero__orb hero__orb--violet"></div>
+  <div class="hero__content">
+    <span class="badge" style="margin-bottom:1.5rem;display:inline-flex;">{{ section.settings.badge_text }}</span>
+    <h1 class="hero__title heading-display">
+      <span>{{ section.settings.heading_line_1 }}</span><br>
+      <span class="gradient-text">{{ section.settings.heading_line_2 }}</span>
+    </h1>
+    <p class="hero__subtitle">{{ section.settings.subheading }}</p>
+    <div class="hero__actions">
+      <a href="{{ section.settings.cta_primary_url }}" class="btn btn-primary">{{ section.settings.cta_primary_label }}</a>
+      <a href="{{ section.settings.cta_secondary_url }}" class="btn btn-outline">{{ section.settings.cta_secondary_label }}</a>
+    </div>
+    <div class="hero__trust">
+      <span>⭐⭐⭐⭐⭐ 50,000+ reviews</span>
+      <span>🌿 Vegan & Cruelty-Free</span>
+      <span>🚚 Free shipping over $75</span>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    { "type": "text", "id": "badge_text", "label": "Badge", "default": "✨ New Collection Dropping Soon" },
+    { "type": "text", "id": "heading_line_1", "label": "Heading line 1", "default": "Beauty That" },
+    { "type": "text", "id": "heading_line_2", "label": "Heading line 2 (gradient)", "default": "Makes A Statement" },
+    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "Bold formulas. Vibrant shades. 100% cruelty-free. Built for every skin, every tone, every vibe." },
+    { "type": "text", "id": "cta_primary_label", "label": "Primary CTA label", "default": "Shop the Collection" },
+    { "type": "url", "id": "cta_primary_url", "label": "Primary CTA link", "default": "/collections/all" },
+    { "type": "text", "id": "cta_secondary_label", "label": "Secondary CTA label", "default": "Best Sellers" },
+    { "type": "url", "id": "cta_secondary_url", "label": "Secondary CTA link", "default": "/collections/best-sellers" }
+  ],
+  "presets": [{ "name": "Hero" }]
+}
+{% endschema %}

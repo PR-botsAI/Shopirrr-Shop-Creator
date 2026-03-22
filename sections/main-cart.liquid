@@ -1,0 +1,32 @@
+<div class="container section">
+  <h1 class="heading-display gradient-text" style="font-size:2.5rem;margin-bottom:2rem;">Your Bag</h1>
+  {% if cart.item_count == 0 %}
+    <div style="text-align:center;padding:4rem 0;">
+      <p style="color:rgba(250,250,250,0.5);margin-bottom:2rem;">Your bag is empty</p>
+      <a href="/collections/all" class="btn btn-primary">Start Shopping</a>
+    </div>
+  {% else %}
+    {% for item in cart.items %}
+      <div style="display:flex;gap:1rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.08);align-items:center;">
+        <img src="{{ item.image | image_url: width: 100 }}" alt="{{ item.title }}" style="width:80px;height:80px;object-fit:cover;border-radius:0.75rem;" width="100" height="100">
+        <div style="flex:1;">
+          <p style="font-weight:500;">{{ item.product.title }}</p>
+          <p style="color:rgba(250,250,250,0.5);font-size:0.875rem;">{{ item.variant.title }}</p>
+          <p style="color:var(--color-pink);font-weight:600;">{{ item.price | money }}</p>
+        </div>
+      </div>
+    {% endfor %}
+    <div style="margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.08);">
+      <div style="display:flex;justify-content:space-between;margin-bottom:1.5rem;font-size:1.125rem;">
+        <span>Subtotal</span><span style="color:var(--color-pink);font-weight:700;">{{ cart.total_price | money }}</span>
+      </div>
+      {% form 'cart' %}
+        <button type="submit" name="checkout" class="btn btn-primary" style="width:100%;padding:1rem;font-size:1rem;">Checkout</button>
+      {% endform %}
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{ "name": "Cart" }
+{% endschema %}

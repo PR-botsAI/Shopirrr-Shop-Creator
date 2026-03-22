@@ -1,0 +1,41 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="site-logo gradient-text" style="margin-bottom:1rem;">{{ shop.name }}</div>
+        <p style="color:rgba(250,250,250,0.5);font-size:0.875rem;max-width:280px;line-height:1.7;">{{ section.settings.tagline }}</p>
+      </div>
+      <div>
+        <p class="footer-heading">Shop</p>
+        <ul class="footer-links">
+          {% for link in linklists[section.settings.shop_menu].links %}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div>
+        <p class="footer-heading">Help</p>
+        <ul class="footer-links">
+          {% for link in linklists[section.settings.help_menu].links %}
+            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.</span>
+      <span>Powered by Shopify</span>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    { "type": "text", "id": "tagline", "label": "Tagline", "default": "Bold beauty for bold people. Cruelty-free, vegan formulas." },
+    { "type": "link_list", "id": "shop_menu", "label": "Shop menu" },
+    { "type": "link_list", "id": "help_menu", "label": "Help menu" }
+  ]
+}
+{% endschema %}

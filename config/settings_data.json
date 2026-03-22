@@ -1,0 +1,15 @@
+{
+  "current": {
+    "color_primary": "#FF2D78",
+    "color_secondary": "#7B2FFF",
+    "color_background": "#0A0A0A",
+    "color_text": "#FAFAFA",
+    "color_gold": "#F5C542",
+    "announcement_bar_enabled": true,
+    "announcement_text_1": "✨ Free shipping on orders over $75",
+    "announcement_text_2": "💄 New arrivals: Summer Glow Collection",
+    "announcement_text_3": "🌿 100% cruelty-free & vegan formulas",
+    "footer_tagline": "Bold beauty for bold people."
+  },
+  "presets": {}
+}

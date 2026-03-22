@@ -1,0 +1,22 @@
+{% if section.settings.enabled %}
+<div class="announcement-bar">
+  <div class="announcement-bar__inner">
+    {% assign messages = section.settings.message_1 | append: '|||' | append: section.settings.message_2 | append: '|||' | append: section.settings.message_3 %}
+    {% assign msg_array = messages | split: '|||' %}
+    {% for msg in msg_array %}<span class="announcement-bar__message">{{ msg }}</span>{% endfor %}
+    {% for msg in msg_array %}<span class="announcement-bar__message">{{ msg }}</span>{% endfor %}
+  </div>
+</div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": [
+    { "type": "checkbox", "id": "enabled", "label": "Show bar", "default": true },
+    { "type": "text", "id": "message_1", "label": "Message 1", "default": "✨ Free shipping on orders over $75" },
+    { "type": "text", "id": "message_2", "label": "Message 2", "default": "💄 New arrivals dropping soon" },
+    { "type": "text", "id": "message_3", "label": "Message 3", "default": "🌿 100% cruelty-free & vegan" }
+  ]
+}
+{% endschema %}

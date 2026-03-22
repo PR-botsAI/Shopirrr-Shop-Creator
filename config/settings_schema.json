@@ -1,0 +1,43 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Shopirrr Beauty",
+    "theme_version": "1.0.0",
+    "theme_author": "Shopirrr",
+    "theme_documentation_url": "https://github.com/PR-botsAI/Shopirrr-Shop-Creator",
+    "theme_support_url": "https://github.com/PR-botsAI/Shopirrr-Shop-Creator/issues"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      { "type": "color", "id": "color_primary", "label": "Primary (Pink)", "default": "#FF2D78" },
+      { "type": "color", "id": "color_secondary", "label": "Secondary (Violet)", "default": "#7B2FFF" },
+      { "type": "color", "id": "color_background", "label": "Background", "default": "#0A0A0A" },
+      { "type": "color", "id": "color_text", "label": "Text", "default": "#FAFAFA" },
+      { "type": "color", "id": "color_gold", "label": "Accent Gold", "default": "#F5C542" }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      { "type": "font_picker", "id": "type_body_font", "label": "Body font", "default": "inter_n4" },
+      { "type": "font_picker", "id": "type_header_font", "label": "Heading font", "default": "playfair_display_n4" }
+    ]
+  },
+  {
+    "name": "Announcement Bar",
+    "settings": [
+      { "type": "checkbox", "id": "announcement_bar_enabled", "label": "Show announcement bar", "default": true },
+      { "type": "text", "id": "announcement_text_1", "label": "Message 1", "default": "✨ Free shipping on orders over $75" },
+      { "type": "text", "id": "announcement_text_2", "label": "Message 2", "default": "💄 New arrivals: Summer Glow Collection" },
+      { "type": "text", "id": "announcement_text_3", "label": "Message 3", "default": "🌿 100% cruelty-free & vegan formulas" }
+    ]
+  },
+  {
+    "name": "Footer",
+    "settings": [
+      { "type": "text", "id": "footer_tagline", "label": "Tagline", "default": "Bold beauty for bold people." },
+      { "type": "richtext", "id": "footer_copyright", "label": "Copyright", "default": "<p>© 2026 Shopirrr. All rights reserved.</p>" }
+    ]
+  }
+]
