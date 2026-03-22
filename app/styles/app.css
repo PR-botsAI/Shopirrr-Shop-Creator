@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-pink: #FF2D78;
+    --color-violet: #7B2FFF;
+    --color-dark: #0A0A0A;
+    --color-light: #FAFAFA;
+    --color-gold: #F5C542;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { @apply bg-brand-dark text-brand-light font-sans antialiased; }
+  ::selection { background: #FF2D78; color: #fff; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-3 rounded-full
+           bg-brand-pink text-white font-semibold text-sm tracking-wide
+           hover:bg-brand-violet transition-all duration-300
+           focus:outline-none focus:ring-2 focus:ring-brand-pink;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-8 py-3 rounded-full
+           border-2 border-brand-pink text-brand-pink font-semibold text-sm
+           hover:bg-brand-pink hover:text-white transition-all duration-300;
+  }
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-pink to-brand-violet bg-clip-text text-transparent;
+  }
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-brand-pink/20;
+  }
+  .section-padding { @apply px-4 sm:px-6 lg:px-8 py-16 lg:py-24; }
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold
+           bg-brand-pink/20 text-brand-pink border border-brand-pink/30;
+  }
+}
